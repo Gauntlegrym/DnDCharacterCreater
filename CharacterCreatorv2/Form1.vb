@@ -6,9 +6,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub CheckBox10_CheckedChanged(sender As Object, e As EventArgs) Handles cbsbVan.CheckedChanged
 
-    End Sub
 
     Private Sub PnlEditionOpt_Paint(sender As Object, e As PaintEventArgs) Handles PnlEditionOpt.Paint
 
@@ -27,5 +25,31 @@ Public Class Form1
 
     Private Sub btnThirdPartyAcc_Click(sender As Object, e As EventArgs) Handles btnThirdPartyAcc.Click
         MessageBox.Show("Coming Soon!")
+    End Sub
+
+    Private Sub btnSheets_Click(sender As Object, e As EventArgs) Handles btnSheets.Click
+
+        Sheets.Show()
+
+    End Sub
+
+    Private Sub cbGeneric_CheckedChanged(sender As Object, e As EventArgs) Handles cbGeneric.CheckedChanged
+
+    End Sub
+
+    Private Sub clbSources_SelectedIndexChanged(sender As Object, e As EventArgs) Handles clbSources.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub btnSourcesReset_Click(sender As Object, e As EventArgs) Handles btnSourcesReset.Click
+        uncheckSourceList(clbSources)
+        uncheckSourceList(clbAccessories)
+        uncheckSourceList(clbAdventures)
+    End Sub
+
+    Private Sub uncheckSourceList(sourceList As CheckedListBox)
+        For i As Integer = 0 To sourceList.Items.Count - 1
+            sourceList.SetItemChecked(i, False)
+        Next
     End Sub
 End Class
